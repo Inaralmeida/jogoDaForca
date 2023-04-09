@@ -1,5 +1,5 @@
 import { letterData, wordData} from "./data.js";
-import { createButtonsLetters} from "./functions.js";
+import { createButtonsLetters} from "./letters.js";
 import { selectWord } from "./word.js";
 
 
