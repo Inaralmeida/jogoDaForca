@@ -1,12 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt_BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Jogo da Forca</title>
 </head>
 <body>
+
+    <header>
+        <h1>Jogo da forca</h1>
+    </header>
+
+    <main>
+        <section class="informacoes">
+            <div class="name">
+                <h2>Nome: <span id="playerName">Inara </span> </h2>
+            </div>
+
+            <div class="pontuacao">
+                <h2>Pontos: <span id="pontos">10</span></h2>
+            </div>
+        </section>
+
+        <section class="containerForca">
+            <div class="containerBoneco">
+                <div class="boneco">
+                    <span class="cabeca"></span>
+                    <span class="corpo"></span>
+                    <span class="bracoD"></span>
+                    <span class="bracoE"></span>
+                    <span class="pernaD"></span>
+                    <span class="pernaE"></span>
+                </div>
+            </div>
+            <div class="letras">
+                <span class="containerLetra">
+                    <p class="letra">I</p>
+                </span>
+                <span class="containerLetra">
+                    <p class="letra">N</p>
+                </span>
+                <span class="containerLetra">
+                    <p class="letra">A</p>
+                </span>
+                <span class="containerLetra">
+                    <p class="letra">R</p>
+                </span>
+                <span class="containerLetra">
+                    <p class="letra">A</p>
+                </span>
+            </div>
+            <div class="dicas">
+                <span class="dica">Amarela</span>
+                <span class="dica">Fruta</span>
+                <span class="dica">Fruta</span>
+            </div>
+        </section>
+
+        <section class="teclado">
+            <div class="btns-letras">
+                <button class="btn-letra certa">A</button>
+                <button class="btn-letra errada">B</button>
+                <button class="btn-letra">C</button>
+                <button class="btn-letra">D</button>
+                <button class="btn-letra">E</button>
+            </div>
+            <div class="btn-options">
+                <button>Dica 1 - (-10 pontos)</button>
+                <button>Dica 2 - (-20 pontos)</button>
+                <button>Dica 3 - (-30 pontos)</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="./js/main.js"></script>
     
 </body>
 </html>
