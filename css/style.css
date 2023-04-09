@@ -189,6 +189,12 @@ main {
   font-size: 24px;
   font-weight: bold;
 }
+
+.btn-letra:hover, .btn-options > button:hover{
+ background-color: #d6d4d4;
+ transform: scale(1.1);
+ transition: all 0.2s;
+}
 .certa{
   background-color: #73c883;
   border: 3px solid #26874e;
@@ -201,13 +207,15 @@ main {
   color: #a2242f;
   box-shadow: 2px 2px 5px #c89fa3;
 }
-.btn-letra:hover, .btn-options > button:hover{
- background-color: #d6d4d4;
- transform: scale(1.1);
- transition: all 0.2s;
+.certa:hover, .errada:hover{
+  background-color: #73c883;
+ transform: scale(1);
+ transition: none;
+ cursor: not-allowed;
 }
-
-
+.errada:hover{
+  background-color: #d3989f;
+}
 .btn-options{
   width: 20%;
   height: 100%;

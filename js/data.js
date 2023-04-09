@@ -1,31 +1,31 @@
-export const palavrasData = [
+export const wordData = [
   {
     palavra: "Banana",
-    dicas: {
-      1: "Fruta",
-      2: "Amarela",
-      3: "Tem pintinha pretas",
-    },
+    dicas: 
+      ["Fruta",
+      "Amarela",
+      "Tem pintinha pretas"]
+    
   },
   {
     palavra: "Faculdade",
-    dicas: {
-      1: "Muitos cursos",
-      2: "Formação",
-      3: "Academico",
-    },
+    dicas: 
+      ["Muitos cursos",
+      "Formação",
+      "Academico"]
+    
   },
   {
     palavra: "Cama",
-    dicas: {
-      1: "Dormir",
-      2: "Quarto",
-      3: "Colchão",
-    },
+    dicas: 
+      ["Dormir",
+      "Quarto",
+      "Colchão"]
+    
   },
 ];
 
-export const letrasData = [
+export const letterData = [
   "A",
   "B",
   "C",

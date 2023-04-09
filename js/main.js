@@ -1,6 +1,10 @@
-import { letrasData } from "./data.js";
-import { createButtonsLetras } from "./functions.js";
+import { letterData, wordData} from "./data.js";
+import { createButtonsLetters} from "./functions.js";
+import { selectWord } from "./word.js";
+
 
 const teclado = document.querySelector('#teclado')
 
-createButtonsLetras(teclado, letrasData)
+createButtonsLetters(teclado, letterData)
+
+selectWord(wordData)
