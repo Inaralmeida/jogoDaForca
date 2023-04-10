@@ -9,7 +9,6 @@ export const selectWord = (words) =>{
     createdSpaceLetter(wordSelected.palavra)
 }
 
-
 const createdSpaceLetter = (word) =>{
     const arrWord = word.split('')
     arrWord.forEach((letter)=>{

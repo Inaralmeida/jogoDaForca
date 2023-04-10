@@ -25,7 +25,14 @@ const addStyledButton = (type, element) => {
   element.classList.add(type);
 };
 
-export const handleClickTip = (e, id)=>{
+export const addEventsButons = (listButons) =>{
+
+  listButons.forEach((btn, i )=>{
+    btn.addEventListener('click', (e)=>handleClickTip(e, i))
+})
+}
+
+ const handleClickTip = (e, id)=>{
     e.preventDefault()
     document.querySelectorAll('.dica').forEach((tip, i )=>{
         if(i == id){
