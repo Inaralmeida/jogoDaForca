@@ -52,6 +52,6 @@ const createBodyByError = (letter) =>{
     5: ".pernaD",
     6: ".pernaE"
   }
-  document.querySelector(errors[lettersWrong]).style.display = 'inline-block'
+  document.querySelector(errors[lettersWrong.length]).style.display = 'inline-block'
   window.localStorage.setItem("lettersWrong", JSON.stringify(lettersWrong))
 }
