@@ -71,6 +71,8 @@ main {
   right: -35%;
   top: 9%;
   z-index: 2;
+
+  display: none;
 }
 .corpo {
   width: 20px;
@@ -81,6 +83,7 @@ main {
   right: -15%;
   top: 30%;
   z-index: 2;
+  display: none;
 }
 .bracoD,
 .pernaD,
@@ -95,6 +98,7 @@ main {
   top: 30%;
   z-index: 2;
   transform: rotate(45deg);
+  display: none;
 }
 .pernaD,
 .pernaE {

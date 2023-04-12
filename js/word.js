@@ -5,6 +5,10 @@ export const selectWord = (words) =>{
     localStorage.setItem('word', wordSelected.palavra)
     localStorage.removeItem('letters')
     localStorage.setItem('letters', createdArrLetterCorrect(wordSelected.palavra.split('')))
+
+    localStorage.removeItem('lettersWrong')
+    localStorage.setItem('lettersWrong', '[]')
+
     createdTips(wordSelected.dicas)
     createdSpaceLetter(wordSelected.palavra)
 }
@@ -35,3 +39,4 @@ const createdArrLetterCorrect = (word)=>{
     return  word.map((letter, i)=> i)
 
 }
+
