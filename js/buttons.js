@@ -12,16 +12,13 @@ export const createButtonsLetters = (id, letras) => {
 const handleClickLetter = (button) => {
   const letter = button.value;
   const word = window.localStorage.getItem("word").toUpperCase();
-  const lettersWrong = JSON.parse(window.localStorage.getItem("lettersWrong"))
-
+  
   if (word.indexOf(letter) > -1) {
     printLettersCorrect(updatedLettersCorrect(letter, word));
     addStyledButton("certa", button);
   } else {
     addStyledButton("errada", button);
-    lettersWrong.push(letter)
-    createBody(lettersWrong.length)
-    window.localStorage.setItem("lettersWrong", JSON.stringify(lettersWrong))
+    createBodyByError(letter) 
   }
 };
 
@@ -44,8 +41,9 @@ export const addEventsButons = (listButons) =>{
     })
 }
 
-const createBody = (lettersWrong) =>{
-
+const createBodyByError = (letter) =>{
+  const lettersWrong = JSON.parse(window.localStorage.getItem("lettersWrong"))
+  lettersWrong.push(letter)
   const errors = {
     1: ".cabeca",
     2: ".corpo",
@@ -54,6 +52,6 @@ const createBody = (lettersWrong) =>{
     5: ".pernaD",
     6: ".pernaE"
   }
-
   document.querySelector(errors[lettersWrong]).style.display = 'inline-block'
+  window.localStorage.setItem("lettersWrong", JSON.stringify(lettersWrong))
 }
