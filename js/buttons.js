@@ -47,13 +47,13 @@ export const addEventsButons = (listButons) =>{
 const createBody = (lettersWrong) =>{
 
   const errors = {
-    1: document.querySelector(".cabeca"),
-    2: document.querySelector(".corpo"),
-    3: document.querySelector(".bracoD"),
-    4: document.querySelector(".bracoE"),
-    5: document.querySelector(".pernaD"),
-    6: document.querySelector(".pernaE"),
+    1: ".cabeca",
+    2: ".corpo",
+    3: ".bracoD",
+    4: ".bracoE",
+    5: ".pernaD",
+    6: ".pernaE"
   }
 
-  errors[lettersWrong].style.display = 'inline-block'
+  document.querySelector(errors[lettersWrong]).style.display = 'inline-block'
 }
