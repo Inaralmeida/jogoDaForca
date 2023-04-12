@@ -1,3 +1,4 @@
+import { addPoints } from "./points.js";
 import $ from "./utils.js";
 
 
@@ -9,6 +10,7 @@ export const updatedLettersCorrect = (letter, word)=>{
 
   const lettersCorrectUpdated = wordArr.map((l, i)=>{
     if(l == letter && lettersCorrect[i] == i){
+      addPoints()
       return l
     }else{
       return lettersCorrect[i]

@@ -1,5 +1,3 @@
-
-
 const createElement = (tag, content, className, id = '', value ='') => {
     const element = document.createElement(tag);
     element.textContent= content

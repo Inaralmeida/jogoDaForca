@@ -1,4 +1,5 @@
 import { printLettersCorrect, updatedLettersCorrect } from "./letters.js";
+import { addPoints } from "./points.js";
 import $ from "./utils.js";
 
 export const createButtonsLetters = (id, letras) => {
@@ -16,6 +17,7 @@ const handleClickLetter = (button) => {
   if (word.indexOf(letter) > -1) {
     printLettersCorrect(updatedLettersCorrect(letter, word));
     addClassButton("certa", button);
+    
   } else {
     addClassButton("errada", button);
     createBodyByError(letter);
