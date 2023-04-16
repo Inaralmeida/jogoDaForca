@@ -1,60 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt_BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
     <title>Jogo da Forca</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <h1>Jogo da forca</h1>
+      <h1>Jogo da forca</h1>
     </header>
 
     <main>
-        <section class="informacoes">
-            <div class="name">
-                <h2>Nome: <span id="playerName">Inara </span> </h2>
-            </div>
+      <section class="informacoes">
+        <div class="name">
+          <h2>Nome: <span id="playerName"></span></h2>
+        </div>
 
-            <div class="pontuacao">
-                <h2>Pontos: <span id="pontos"></span></h2>
-            </div>
-        </section>
+        <div class="pontuacao">
+          <h2>Pontos: <span id="pontos"></span></h2>
+        </div>
+      </section>
 
-        <section class="containerForca">
-            <div class="containerBoneco">
-                <div class="boneco">
-                    <span class="cabeca"></span>
-                    <span class="corpo"></span>
-                    <span class="bracoD"></span>
-                    <span class="bracoE"></span>
-                    <span class="pernaD"></span>
-                    <span class="pernaE"></span>
-                </div>
-            </div>
-            <div class="letras" id="containerLetras">
-            </div>
-            <div class="dicas" id="containerDicas">
-            </div>
-        </section>
+      <section class="containerForca">
+        <div class="containerBoneco">
+          <div class="boneco">
+            <span class="cabeca"></span>
+            <span class="corpo"></span>
+            <span class="bracoD"></span>
+            <span class="bracoE"></span>
+            <span class="pernaD"></span>
+            <span class="pernaE"></span>
+          </div>
+        </div>
+        <div class="letras" id="containerLetras"></div>
+        <div class="dicas" id="containerDicas"></div>
+      </section>
 
-        <section class="teclado">
-            <div class="btns-letras" id="teclado">
-            </div>
-            <div class="btn-options">
-                <button id='dica1' disabled="true" class="btnDica">Dica 1 - 10 pontos</button>
-                <button id='dica2' disabled="true" class="btnDica">Dica 2 - 20 pontos</button>
-                <button id='dica3' disabled="true" class="btnDica">Dica 3 - 30 pontos</button>
-            </div>
-        </section>
+      <section class="teclado">
+        <div class="btns-letras" id="teclado"></div>
+        <div class="btn-options">
+          <button id="dica1" disabled="true" class="btnDica">
+            Dica 1 - 10 pontos
+          </button>
+          <button id="dica2" disabled="true" class="btnDica">
+            Dica 2 - 20 pontos
+          </button>
+          <button id="dica3" disabled="true" class="btnDica">
+            Dica 3 - 30 pontos
+          </button>
+        </div>
+      </section>
     </main>
 
     <script src="./js/main.js" type="module"></script>
-    
-</body>
+
+    <div class="modal">
+      <div class="modal-content">
+        <section class="header">
+          <h1 class="title">Jogo da Forca</h1>
+        </section>
+        <section class="content">
+          <h2 class="subtitle">Seja bem vind@</h2>
+          <form action="">
+            <h3 class="subtitle">Qual é o seu nome</h3>
+            <input type="text" id="name-player" />
+          </form>
+          <button class="call-action">Começar</button>
+        </section>
+      </div>
+    </div>
+  </body>
 </html>
