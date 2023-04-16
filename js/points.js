@@ -1,5 +1,7 @@
 import $ from "./utils.js";
-const pontos = document.querySelector("#pontos");
+import doc from "./elementos.js";
+
+const pontos = doc.elTxt.pPontos;
 
 export const setPoints = (points, add = true) => {
   $.setLocalStorage("points", points);
@@ -18,4 +20,10 @@ export const removePoints = (points = 10) => {
   const newTotal = Number(totalPoints) - points;
   pontos.textContent = newTotal;
   setPoints(newTotal);
+};
+
+export const totalWordsCorrect = () => {
+  let total = $.getLocalStorage("totalWords");
+  total++;
+  $.setLocalStorage("totalWords", total);
 };

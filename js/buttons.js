@@ -1,4 +1,5 @@
 import { printLettersCorrect, updatedLettersCorrect } from "./letters.js";
+import { openModalLoser } from "./modal.js";
 import $ from "./utils.js";
 
 export const createButtonsLetters = (id, letras) => {
@@ -40,6 +41,9 @@ const createBodyByError = (letter) => {
   const element = document.querySelector(errors[lettersWrong.length]);
   $.setDisplayElement(element, "inline-block");
   $.setLocalStorage("lettersWrong", lettersWrong);
+  if (lettersWrong.length == 6) {
+    openModalLoser();
+  }
 };
 
 export const addEventsButons = (listButons, func) => {

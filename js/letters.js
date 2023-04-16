@@ -1,7 +1,10 @@
 import { modalWin } from "./modal.js";
-import { addPoints } from "./points.js";
+import { addPoints, totalWordsCorrect } from "./points.js";
 import { updatedTips } from "./tips.js";
+import doc from "./elementos.js";
 import $ from "./utils.js";
+
+const { containers } = doc;
 
 export const updatedLettersCorrect = (letter, word) => {
   const lettersCorrect = $.getLocalStorage("letters");
@@ -22,9 +25,8 @@ export const updatedLettersCorrect = (letter, word) => {
 };
 
 export const printLettersCorrect = (lettersCorrect) => {
-  const container = document.querySelectorAll(`.containerLetra`);
-
-  container.forEach((element, i) => {
+  const containerLetraArr = document.querySelectorAll(".containerLetra");
+  containerLetraArr.forEach((element, i) => {
     if (element.id === lettersCorrect[i]) {
       element.innerHTML = "";
       const elP = $.createElement("p", lettersCorrect[i], "letra");
@@ -42,7 +44,7 @@ export const createdSpaceLetters = (word) => {
   arrWord.forEach((letter) => {
     const elTip = $.createElement("span", "", `containerLetra`);
     elTip.id = letter.toUpperCase();
-    document.querySelector("#containerLetras").appendChild(elTip);
+    containers.containerLetras.appendChild(elTip);
   });
 };
 
@@ -51,6 +53,7 @@ export const hasWin = (lettersArr, wordArr) => {
   const wordCorrected = $.getLocalStorage("word").toUpperCase();
 
   if (lettersCorrected === wordCorrected) {
+    totalWordsCorrect();
     modalWin();
   }
 };

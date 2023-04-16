@@ -1,10 +1,6 @@
-const modalEl = document.querySelector("#modal");
-const modalStart = document.querySelector(".modal-content-start");
-const modalwin = document.querySelector(".modal-content-win");
-const modalLoser = document.querySelector(".modal-content-loser");
-
 import $ from "./utils.js";
-
+import doc from "./elementos.js";
+const { modalEl, modalStart, modalLoser, modalwin } = doc.modal;
 export const closeModal = () => {
   $.setDisplayElement(modalEl, "none");
   $.setDisplayElement(modalStart, "none");
@@ -24,6 +20,7 @@ export const modalWin = () => {
   }, 300);
 };
 export const openModalLoser = () => {
+  pTotalPalavras.innerText = $.getLocalStorage("totalWords");
   setTimeout(() => {
     $.setDisplayElement(modalEl, "flex");
     $.setDisplayElement(modalLoser, "flex");

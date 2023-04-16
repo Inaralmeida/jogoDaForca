@@ -18,7 +18,7 @@
     <main>
       <section class="informacoes">
         <div class="name">
-          <h2>Nome: <span id="playerName"></span></h2>
+          <h2>Nome: <span class="playerName"></span></h2>
         </div>
 
         <div class="pontuacao">
@@ -60,7 +60,7 @@
     <script src="./js/main.js" type="module"></script>
 
     <div class="modal" id="modal">
-      <div class="modal-content-start" style="display: none">
+      <div class="modal-content-start">
         <section class="header">
           <h1 class="title">Jogo da Forca</h1>
         </section>
@@ -82,10 +82,10 @@
         </div>
       </div>
 
-      <div class="modal-content-loser">
+      <div class="modal-content-loser" style="display: none">
         <h1>Não foi dessa vez!</h1>
         <section class="loser-infos">
-          <p>Pontos: <span id="pontos">50 </span></p>
+          <p>Pontos: <span id="pontos"></span></p>
           <p>Palavras: <span id="totalPalavras">2 </span></p>
         </section>
         <div>

@@ -8,22 +8,16 @@ import { createdArrLettersCorrect, createdSpaceLetters } from "./letters.js";
 import { closeModal, openModalStart } from "./modal.js";
 import { setPoints } from "./points.js";
 import { createdTips, handleClickTip, updatedTips } from "./tips.js";
-import $ from "./utils.js";
 import { selectWord } from "./word.js";
-const body = document.querySelector("body");
+import $ from "./utils.js";
+import doc from "./elementos.js";
 
-const teclado = document.querySelector("#teclado");
-const btnTips = document.querySelectorAll(".btnDica");
-const playerName = document.querySelector("#name-player");
-const btnStart = document.querySelector("#start-game");
-const btnNextWord = document.querySelector("#next-word");
-const containerLetras = document.querySelector("#containerLetras");
-const btnRestart = document.querySelector("#restart");
+const { btns, elTxt, inputs, containers } = doc;
 
 const startGame = (newGame = true) => {
-  createButtonsLetters(teclado, letterData);
-  document.querySelector("#playerName").textContent = playerName.value;
-  containerLetras.innerHTML = ``;
+  createButtonsLetters(containers.teclado, letterData);
+  elTxt.pPlayerName.text = inputs.namePlayer.value;
+  containers.containerLetras.innerHTML = ``;
   const wordSelected = selectWord(wordData);
   $.resetLocalStorage(
     "letters",
@@ -33,11 +27,12 @@ const startGame = (newGame = true) => {
   $.resetLocalStorage("tipsEnabled", []);
   createdTips(wordSelected.dicas);
   createdSpaceLetters(wordSelected.palavra);
-  addEventsButons(btnTips, handleClickTip);
+  addEventsButons(btns.btnTips, handleClickTip);
   updatedTips();
 
   if (newGame) {
     setPoints(0);
+    $.setLocalStorage("totalWords", 0);
   }
 };
 
@@ -53,17 +48,17 @@ const resetScreen = () => {
   $.resetForca();
 };
 
-btnStart.addEventListener("click", () => {
+btns.btnStart.addEventListener("click", () => {
   closeModal();
   startGame();
 });
 
-btnNextWord.addEventListener("click", () => {
+btns.btnNextWord.addEventListener("click", () => {
   closeModal();
   newGame();
 });
 
-btnRestart.addEventListener("click", () => {
+btns.btnRestart.addEventListener("click", () => {
   closeModal();
   openModalStart();
 });
