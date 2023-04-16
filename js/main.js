@@ -11,11 +11,13 @@ const teclado = document.querySelector("#teclado");
 const btnTips = document.querySelectorAll(".btnDica");
 const playerName = document.querySelector("#name-player");
 const btnStart = document.querySelector("#start-game");
+const btnNextWord = document.querySelector("#next-word");
+const containerLetras = document.querySelector("#containerLetras");
 
-const startGame = () => {
-  document.querySelector("#playerName").textContent = playerName.value;
+const startGame = (newGame = true) => {
   createButtonsLetters(teclado, letterData);
-
+  document.querySelector("#playerName").textContent = playerName.value;
+  containerLetras.innerHTML = ``;
   const wordSelected = selectWord(wordData);
   $.resetLocalStorage(
     "letters",
@@ -23,16 +25,33 @@ const startGame = () => {
   );
   $.resetLocalStorage("lettersWrong", []);
   $.resetLocalStorage("tipsEnabled", []);
-
   createdTips(wordSelected.dicas);
   createdSpaceLetters(wordSelected.palavra);
   addEventsButons(btnTips, handleClickTip);
   updatedTips();
 
-  setPoints(0);
+  if (newGame) {
+    setPoints(0);
+  }
+};
+
+const newGame = () => {
+  resetScreen();
+  startGame(false);
+};
+
+const resetScreen = () => {
+  $.resetElement("#teclado");
+  $.resetElement("#containerLetras");
+  $.resetElement("#containerDicas");
 };
 
 btnStart.addEventListener("click", () => {
   closeModal();
   startGame();
+});
+
+btnNextWord.addEventListener("click", () => {
+  closeModal();
+  newGame();
 });

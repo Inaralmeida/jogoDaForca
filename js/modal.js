@@ -14,6 +14,8 @@ export const openModal = () => {
 };
 
 export const modalWin = () => {
-  modalEl.style.display = "flex";
-  modalwin.style.display = "flex";
+  setTimeout(() => {
+    modalEl.style.display = "flex";
+    modalwin.style.display = "flex";
+  }, 300);
 };
