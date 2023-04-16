@@ -133,7 +133,6 @@ main {
   font-weight: bold;
 }
 
-
 .dicas {
   width: 20%;
   height: 100%;
@@ -148,7 +147,7 @@ main {
   gap: 40px;
 }
 
-.dica{
+.dica {
   width: 80%;
   height: 30%;
   border-radius: 8px;
@@ -161,7 +160,6 @@ main {
   justify-content: center;
   background-color: #f2f2f2;
 }
-
 
 .teclado {
   width: 100%;
@@ -184,7 +182,7 @@ main {
   border-radius: 10px;
   background-color: #ccc;
 }
-.btn-letra{
+.btn-letra {
   width: 50px;
   height: 50px;
   border-radius: 8px;
@@ -194,33 +192,35 @@ main {
   font-weight: bold;
 }
 
-.btn-letra:hover, .btn-options > button:hover{
- background-color: #d6d4d4;
- transform: scale(1.1);
- transition: all 0.2s;
+.btn-letra:hover,
+.btn-options > button:hover {
+  background-color: #d6d4d4;
+  transform: scale(1.1);
+  transition: all 0.2s;
 }
-.certa{
+.certa {
   background-color: #73c883;
   border: 3px solid #26874e;
   color: #1d4732;
   box-shadow: 2px 2px 5px #84bb87;
 }
-.errada{
+.errada {
   background-color: #d3989f;
   border: 3px solid #b24a53;
   color: #a2242f;
   box-shadow: 2px 2px 5px #c89fa3;
 }
-.certa:hover, .errada:hover{
+.certa:hover,
+.errada:hover {
   background-color: #73c883;
- transform: scale(1);
- transition: none;
- cursor: not-allowed;
+  transform: scale(1);
+  transition: none;
+  cursor: not-allowed;
 }
-.errada:hover{
+.errada:hover {
   background-color: #d3989f;
 }
-.btn-options{
+.btn-options {
   width: 20%;
   height: 100%;
   background-color: #ccc;
@@ -232,7 +232,7 @@ main {
   border: 10px solid #808080;
   border-radius: 10px;
 }
-.btn-options > button{
+.btn-options > button {
   width: 80%;
   height: 40px;
   border-radius: 8px;
@@ -240,4 +240,11 @@ main {
   box-shadow: 2px 2px 5px #101010;
   font-size: 20px;
   font-weight: bold;
+}
+
+.btn-options > button:disabled {
+  cursor: not-allowed;
+  background-color: #d6d4d4;
+  transform: scale(1);
+  transition: none;
 }
