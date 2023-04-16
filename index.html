@@ -59,8 +59,8 @@
 
     <script src="./js/main.js" type="module"></script>
 
-    <div class="modal">
-      <div class="modal-content">
+    <div class="modal" id="modal">
+      <div class="modal-content-start">
         <section class="header">
           <h1 class="title">Jogo da Forca</h1>
         </section>
@@ -70,8 +70,16 @@
             <h3 class="subtitle">Qual é o seu nome</h3>
             <input type="text" id="name-player" />
           </form>
-          <button class="call-action">Começar</button>
+          <button id="start-game" class="call-action">Começar</button>
         </section>
+      </div>
+
+      <div class="modal-content-win" style="display: none">
+        <h1>VOCÊ VENCEU!</h1>
+        <div>
+          <button class="call-action">Parar por aqui</button>
+          <button class="call-action">Proxima Palavra</button>
+        </div>
       </div>
     </div>
   </body>

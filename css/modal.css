@@ -9,8 +9,9 @@
   align-items: center;
   justify-content: center;
 }
-
-.modal-content {
+/* MODAL START */
+.modal-content-start,
+.modal-content-win {
   width: 80%;
   height: 70%;
   background-color: #f2f2f2;
@@ -22,13 +23,13 @@
   justify-content: space-between;
 }
 
-.modal-content .header {
+.modal-content-start .header {
   width: 100%;
   height: 80px;
   text-align: center;
 }
 
-.modal-content .content {
+.modal-content-start .content {
   width: 100%;
   height: calc(100% - 80px);
   display: flex;
@@ -37,7 +38,7 @@
   flex-direction: column;
 }
 
-.modal-content form {
+.modal-content-start form {
   width: 50%;
   background-color: #ccc;
   display: flex;
@@ -49,7 +50,7 @@
   gap: 20px;
 }
 
-.modal-content form input {
+.modal-content-start form input {
   width: 100%;
   height: 70px;
   border-radius: 8px;
@@ -58,4 +59,17 @@
   padding-left: 10px;
   font-size: 32px;
   text-align: center;
+}
+
+/* MODAL WIN */
+.modal-content-win {
+  width: 50%;
+  background-image: url("../img/cofets1.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 54px;
 }

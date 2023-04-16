@@ -1,3 +1,4 @@
+import { modalWin } from "./modal.js";
 import { addPoints } from "./points.js";
 import { updatedTips } from "./tips.js";
 import $ from "./utils.js";
@@ -16,7 +17,7 @@ export const updatedLettersCorrect = (letter, word) => {
     }
   });
   $.setLocalStorage("letters", lettersCorrectUpdated);
-
+  hasWin(lettersCorrect, wordArr);
   return lettersCorrectUpdated;
 };
 
@@ -43,4 +44,13 @@ export const createdSpaceLetters = (word) => {
     elTip.id = letter.toUpperCase();
     document.querySelector("#containerLetras").appendChild(elTip);
   });
+};
+
+export const hasWin = (lettersArr, wordArr) => {
+  const lettersCorrected = $.getLocalStorage("letters").join("");
+  const wordCorrected = $.getLocalStorage("word").toUpperCase();
+
+  if (lettersCorrected === wordCorrected) {
+    modalWin();
+  }
 };
