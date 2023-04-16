@@ -5,7 +5,7 @@ import {
 } from "./buttons.js";
 import { letterData, wordData } from "./data.js";
 import { createdArrLettersCorrect, createdSpaceLetters } from "./letters.js";
-import { closeModal } from "./modal.js";
+import { closeModal, openModalStart } from "./modal.js";
 import { setPoints } from "./points.js";
 import { createdTips, handleClickTip, updatedTips } from "./tips.js";
 import $ from "./utils.js";
@@ -18,6 +18,7 @@ const playerName = document.querySelector("#name-player");
 const btnStart = document.querySelector("#start-game");
 const btnNextWord = document.querySelector("#next-word");
 const containerLetras = document.querySelector("#containerLetras");
+const btnRestart = document.querySelector("#restart");
 
 const startGame = (newGame = true) => {
   createButtonsLetters(teclado, letterData);
@@ -60,6 +61,11 @@ btnStart.addEventListener("click", () => {
 btnNextWord.addEventListener("click", () => {
   closeModal();
   newGame();
+});
+
+btnRestart.addEventListener("click", () => {
+  closeModal();
+  openModalStart();
 });
 
 document.addEventListener("keydown", (e) => {

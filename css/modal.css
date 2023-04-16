@@ -11,7 +11,8 @@
 }
 /* MODAL START */
 .modal-content-start,
-.modal-content-win {
+.modal-content-win,
+.modal-content-loser {
   width: 80%;
   height: 70%;
   background-color: #f2f2f2;
@@ -21,6 +22,10 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
+
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .modal-content-start .header {
@@ -62,7 +67,8 @@
 }
 
 /* MODAL WIN */
-.modal-content-win {
+.modal-content-win,
+.modal-content-loser {
   width: 50%;
   background-image: url("../img/cofets1.gif");
   background-repeat: no-repeat;
@@ -72,12 +78,30 @@
   align-items: center;
   justify-content: center;
   font-size: 54px;
-
-  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
-  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
+/* MODAL LOSER */
+.modal-content-loser {
+  width: 50%;
+  background-image: url("../img/gameover.gif");
 
+  justify-content: end;
+}
+.modal-content-loser > h1 {
+  text-shadow: -1px -1px 0px #f2f2f2, -1px 1px 0px #f2f2f2, 1px -1px 0px #f2f2f2,
+    1px 0px 0px #f2f2f2;
+  font-size: 80px;
+  text-transform: uppercase;
+}
+.loser-infos {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f2f2f280;
+  padding: 5px 1px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
 @-webkit-keyframes scale-in-center {
   0% {
     -webkit-transform: scale(0);

@@ -60,7 +60,7 @@
     <script src="./js/main.js" type="module"></script>
 
     <div class="modal" id="modal">
-      <div class="modal-content-start">
+      <div class="modal-content-start" style="display: none">
         <section class="header">
           <h1 class="title">Jogo da Forca</h1>
         </section>
@@ -79,6 +79,17 @@
         <div>
           <button class="call-action">Parar por aqui</button>
           <button class="call-action" id="next-word">Proxima Palavra</button>
+        </div>
+      </div>
+
+      <div class="modal-content-loser">
+        <h1>Não foi dessa vez!</h1>
+        <section class="loser-infos">
+          <p>Pontos: <span id="pontos">50 </span></p>
+          <p>Palavras: <span id="totalPalavras">2 </span></p>
+        </section>
+        <div>
+          <button id="restart" class="call-action">Reiniciar</button>
         </div>
       </div>
     </div>
