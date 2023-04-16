@@ -39,6 +39,23 @@ const resetElement = (id) => {
   const element = document.querySelector(id);
   element.innerHTML = ``;
 };
+
+export const resetForca = () => {
+  const body = [
+    ".cabeca",
+    ".corpo",
+    ".bracoD",
+    ".bracoE",
+    ".pernaD",
+    ".pernaE",
+  ];
+
+  body.forEach((el) => {
+    const element = document.querySelector(el);
+    setDisplayElement(element, "none");
+  });
+};
+
 export default {
   createElement,
   addEventsButons,
@@ -47,4 +64,5 @@ export default {
   resetLocalStorage,
   setDisplayElement,
   resetElement,
+  resetForca,
 };

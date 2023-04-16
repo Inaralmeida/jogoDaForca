@@ -1,4 +1,8 @@
-import { addEventsButons, createButtonsLetters } from "./buttons.js";
+import {
+  addEventsButons,
+  createButtonsLetters,
+  handleClickLetter,
+} from "./buttons.js";
 import { letterData, wordData } from "./data.js";
 import { createdArrLettersCorrect, createdSpaceLetters } from "./letters.js";
 import { closeModal } from "./modal.js";
@@ -6,6 +10,7 @@ import { setPoints } from "./points.js";
 import { createdTips, handleClickTip, updatedTips } from "./tips.js";
 import $ from "./utils.js";
 import { selectWord } from "./word.js";
+const body = document.querySelector("body");
 
 const teclado = document.querySelector("#teclado");
 const btnTips = document.querySelectorAll(".btnDica");
@@ -44,6 +49,7 @@ const resetScreen = () => {
   $.resetElement("#teclado");
   $.resetElement("#containerLetras");
   $.resetElement("#containerDicas");
+  $.resetForca();
 };
 
 btnStart.addEventListener("click", () => {
@@ -54,4 +60,13 @@ btnStart.addEventListener("click", () => {
 btnNextWord.addEventListener("click", () => {
   closeModal();
   newGame();
+});
+
+document.addEventListener("keydown", (e) => {
+  const valueKey = e.key;
+  const indexValue = letterData.indexOf(valueKey.toUpperCase());
+  if (indexValue > -1) {
+    const btns = document.querySelectorAll(".btn-letra");
+    handleClickLetter(btns[indexValue]);
+  }
 });

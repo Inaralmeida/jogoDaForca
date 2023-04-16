@@ -9,7 +9,7 @@ export const createButtonsLetters = (id, letras) => {
   });
 };
 
-const handleClickLetter = (button) => {
+export const handleClickLetter = (button) => {
   const letter = button.value;
   const word = $.getLocalStorage("word").toUpperCase();
 
