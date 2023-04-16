@@ -1,27 +1,18 @@
+//FIXME: ADICIONAR CATEGORIA NAS PALAVRAS
+//FIXME: ADICIONAR MAIS PALAVRAS
+
 export const wordData = [
   {
     palavra: "Banana",
-    dicas: 
-      ["Fruta",
-      "Amarela",
-      "Tem pintinha pretas"]
-    
+    dicas: ["Fruta", "Amarela", "Tem pintinha pretas"],
   },
   {
     palavra: "Faculdade",
-    dicas: 
-      ["Muitos cursos",
-      "Formação",
-      "Academico"]
-    
+    dicas: ["Muitos cursos", "Formação", "Academico"],
   },
   {
     palavra: "Cama",
-    dicas: 
-      ["Dormir",
-      "Quarto",
-      "Colchão"]
-    
+    dicas: ["Dormir", "Quarto", "Colchão"],
   },
 ];
 
