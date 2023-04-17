@@ -22,6 +22,7 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
+  display: none;
 }
 
 .informacoes {
@@ -51,6 +52,9 @@ main {
   height: 42%;
   border: 30px solid #808080;
   position: absolute;
+  -webkit-animation: scale-in-hor-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-hor-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .boneco::after {
   content: "";
@@ -73,6 +77,8 @@ main {
   z-index: 2;
 
   display: none;
+  -webkit-animation: scale-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .corpo {
   width: 20px;
@@ -84,6 +90,9 @@ main {
   top: 30%;
   z-index: 2;
   display: none;
+  -webkit-animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .bracoD,
 .pernaD,
@@ -95,31 +104,74 @@ main {
   background-color: black;
   position: absolute;
   right: 0%;
-  top: 30%;
+  top: 40%;
   z-index: 2;
   transform: rotate(45deg);
   display: none;
+  -webkit-animation: scale-in-tr 0.5s both;
+  animation: scale-in-tr 0.5s both;
+}
+
+.bracoD,
+.pernaD {
+  right: -15%;
 }
 .pernaD,
 .pernaE {
-  top: 70%;
+  top: 78%;
 }
 .bracoE,
 .pernaE {
+  right: -16%;
+  -webkit-animation: scale-in-tl 0.5s both;
+  animation: scale-in-tl 0.5s both;
   transform: rotate(-45deg);
-  right: -30%;
 }
 
 .letras {
   width: 50%;
   height: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  gap: 30px;
+}
+#containerLetras {
+  width: 100%;
+  height: calc(100% - 150px);
+  display: flex;
   align-items: end;
   justify-content: center;
   padding: 5px;
   gap: 30px;
-  flex-wrap: wrap;
 }
+
+.categoria {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid brown;
+  padding: 20px 15px;
+  border-radius: 10px;
+  background-color: #a2242f80;
+  -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.dicaCategoria {
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-weight: bold;
+  -webkit-animation: flip-in-hor-bottom 0.5s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: flip-in-hor-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
 .containerLetra {
   width: 70px;
   height: 100px;
@@ -127,6 +179,9 @@ main {
   align-items: center;
   justify-content: center;
   border-bottom: 30px solid #808080;
+  -webkit-animation: scale-in-hor-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-hor-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .letra {
   font-size: 36px;
@@ -159,6 +214,9 @@ main {
   align-items: center;
   justify-content: center;
   background-color: #f2f2f2;
+  -webkit-animation: swing-in-top-fwd 0.5s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 .teclado {
@@ -203,12 +261,20 @@ main {
   border: 3px solid #26874e;
   color: #1d4732;
   box-shadow: 2px 2px 5px #84bb87;
+  -webkit-animation: flip-vertical-left 0.4s
+    cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: flip-vertical-left 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    both;
 }
 .errada {
   background-color: #d3989f;
   border: 3px solid #b24a53;
   color: #a2242f;
   box-shadow: 2px 2px 5px #c89fa3;
+  -webkit-animation: flip-vertical-left 0.4s
+    cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    both;
 }
 .certa:hover,
 .errada:hover {
