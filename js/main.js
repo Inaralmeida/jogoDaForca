@@ -15,11 +15,18 @@ import doc from "./elementos.js";
 const { btns, elTxt, inputs, containers } = doc;
 
 const startGame = (newGame = true) => {
-  createButtonsLetters(containers.teclado, letterData);
+  if (newGame) {
+    setPoints(0);
+    $.setLocalStorage("totalWords", 0);
+    elTxt.pPlayerName.textContent = inputs.namePlayer.value;
+    $.setLocalStorage("PlayerName", inputs.namePlayer.value);
+  } else {
+    elTxt.pPlayerName.textContent = $.getLocalStorage("PlayerName");
+  }
 
-  elTxt.pPlayerName.text = inputs.namePlayer.value;
   containers.containerLetras.innerHTML = ``;
-
+  createButtonsLetters(containers.teclado, letterData);
+  $.setLocalStorage("PlayerName", inputs.namePlayer.value);
   const wordSelected = selectWord(wordData);
   $.resetLocalStorage(
     "letters",
@@ -33,11 +40,6 @@ const startGame = (newGame = true) => {
   createdSpaceLetters(wordSelected.palavra);
   addEventsButons(btns.btnTips, handleClickTip);
   updatedTips();
-
-  if (newGame) {
-    setPoints(0);
-    $.setLocalStorage("totalWords", 0);
-  }
 };
 
 const newGame = () => {
