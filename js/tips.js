@@ -1,5 +1,8 @@
 import { removePoints, setPoints } from "./points.js";
 import $ from "./utils.js";
+import doc from "./elementos.js";
+
+const { categoria } = doc.containers;
 
 const btnDica = document.querySelectorAll(".btnDica");
 
@@ -15,7 +18,7 @@ export const handleClickTip = (e, id, btn) => {
   e.preventDefault();
   const tipsEnabled = $.getLocalStorage("tipsEnabled");
   document.querySelectorAll(".dica").forEach((tip, i) => {
-    if (i == id) {
+    if (i == id && tipsEnabled.indexOf(id + 1) == -1) {
       removePoints();
       $.setDisplayElement(tip, "flex");
       $.setLocalStorage("tipsEnabled", [...tipsEnabled, i + 1]);
@@ -41,4 +44,10 @@ export const updatedTips = (tip) => {
   btnDica.forEach((btn, i) => {
     enabledTip(btn, i);
   });
+};
+
+export const firstTip = (dica) => {
+  categoria.textContent = ` `;
+  const tip = $.createElement("span", dica, "dicaCategoria", "dicaCategoria");
+  categoria.appendChild(tip);
 };

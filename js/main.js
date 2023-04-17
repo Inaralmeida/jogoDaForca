@@ -7,7 +7,7 @@ import { letterData, wordData } from "./data.js";
 import { createdArrLettersCorrect, createdSpaceLetters } from "./letters.js";
 import { closeModal, openModalStart } from "./modal.js";
 import { setPoints } from "./points.js";
-import { createdTips, handleClickTip, updatedTips } from "./tips.js";
+import { createdTips, firstTip, handleClickTip, updatedTips } from "./tips.js";
 import { selectWord } from "./word.js";
 import $ from "./utils.js";
 import doc from "./elementos.js";
@@ -16,15 +16,19 @@ const { btns, elTxt, inputs, containers } = doc;
 
 const startGame = (newGame = true) => {
   createButtonsLetters(containers.teclado, letterData);
+
   elTxt.pPlayerName.text = inputs.namePlayer.value;
   containers.containerLetras.innerHTML = ``;
+
   const wordSelected = selectWord(wordData);
   $.resetLocalStorage(
     "letters",
     createdArrLettersCorrect(wordSelected.palavra.split(""))
   );
+  $.setDisplayElement(containers.main, "flex");
   $.resetLocalStorage("lettersWrong", []);
   $.resetLocalStorage("tipsEnabled", []);
+  firstTip(wordSelected.categoria);
   createdTips(wordSelected.dicas);
   createdSpaceLetters(wordSelected.palavra);
   addEventsButons(btns.btnTips, handleClickTip);
@@ -60,6 +64,7 @@ btns.btnNextWord.addEventListener("click", () => {
 
 btns.btnRestart.addEventListener("click", () => {
   closeModal();
+  resetScreen();
   openModalStart();
 });
 

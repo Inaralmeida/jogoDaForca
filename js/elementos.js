@@ -13,12 +13,14 @@ const btnTips = document.querySelectorAll(".btnDica");
 //elements text
 const pTotalPalavras = document.querySelector("#totalPalavras");
 const pPlayerName = document.querySelector(".playerName");
-const pPontos = document.querySelector("#pontos");
+const pPontos = document.querySelector(".pontos");
 
 //containers
 const teclado = document.querySelector("#teclado");
 const containerLetras = document.querySelector("#containerLetras");
 const containerLetraArr = document.querySelectorAll(".containerLetra");
+const categoria = document.querySelector(".categoria");
+const main = document.querySelector("main");
 
 //inputs
 const namePlayer = document.querySelector("#name-player");
@@ -45,6 +47,8 @@ export default {
     teclado,
     containerLetras,
     containerLetraArr,
+    categoria,
+    main,
   },
   inputs: {
     namePlayer,

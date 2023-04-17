@@ -1,6 +1,8 @@
 import $ from "./utils.js";
 import doc from "./elementos.js";
 const { modalEl, modalStart, modalLoser, modalwin } = doc.modal;
+const { pTotalPalavras, pPontos } = doc.elTxt;
+
 export const closeModal = () => {
   $.setDisplayElement(modalEl, "none");
   $.setDisplayElement(modalStart, "none");
@@ -20,7 +22,8 @@ export const modalWin = () => {
   }, 300);
 };
 export const openModalLoser = () => {
-  pTotalPalavras.innerText = $.getLocalStorage("totalWords");
+  pTotalPalavras.textContent = $.getLocalStorage("totalWords");
+  pPontos.textContent = $.getLocalStorage("points");
   setTimeout(() => {
     $.setDisplayElement(modalEl, "flex");
     $.setDisplayElement(modalLoser, "flex");

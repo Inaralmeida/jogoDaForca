@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
     <link rel="stylesheet" href="./css/modal.css" />
     <title>Jogo da Forca</title>
   </head>
@@ -22,7 +23,7 @@
         </div>
 
         <div class="pontuacao">
-          <h2>Pontos: <span id="pontos"></span></h2>
+          <h2>Pontos: <span class="pontos"></span></h2>
         </div>
       </section>
 
@@ -37,7 +38,12 @@
             <span class="pernaE"></span>
           </div>
         </div>
-        <div class="letras" id="containerLetras"></div>
+        <div class="letras">
+          <div class="categoria">
+            <span class="dicaCategoria" id="dicaCategoria"></span>
+          </div>
+          <div id="containerLetras"></div>
+        </div>
         <div class="dicas" id="containerDicas"></div>
       </section>
 
@@ -85,8 +91,8 @@
       <div class="modal-content-loser" style="display: none">
         <h1>Não foi dessa vez!</h1>
         <section class="loser-infos">
-          <p>Pontos: <span id="pontos"></span></p>
-          <p>Palavras: <span id="totalPalavras">2 </span></p>
+          <p>Pontos: <span class="pontos"></span></p>
+          <p>Palavras: <span id="totalPalavras"></span></p>
         </section>
         <div>
           <button id="restart" class="call-action">Reiniciar</button>
