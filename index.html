@@ -83,7 +83,7 @@
       <div class="modal-content-win" style="display: none">
         <h1>VOCÊ VENCEU!</h1>
         <div>
-          <button class="call-action">Parar por aqui</button>
+          <button class="call-action" id="end-game">Parar por aqui</button>
           <button class="call-action" id="next-word">Proxima Palavra</button>
         </div>
       </div>
@@ -92,9 +92,23 @@
         <h1>Não foi dessa vez!</h1>
         <section class="loser-infos">
           <p>Pontos: <span class="pontos"></span></p>
-          <p>Palavras: <span id="totalPalavras"></span></p>
+          <p>Palavras: <span class="totalPalavras"></span></p>
         </section>
         <div>
+          <button id="restart" class="call-action">Reiniciar</button>
+        </div>
+      </div>
+      <div class="modal-content-finish" style="display: none">
+        <article>
+          <h1>Uau <span class="playerName"></span>!</h1>
+          <p>Você mandou muito bem</p>
+        </article>
+        <section class="finish-infos">
+          <p>Pontos: <span class="pontos"></span></p>
+          <p>Palavras: <span class="totalPalavras"></span></p>
+        </section>
+        <div>
+          <button id="homePage" class="call-action">Pagina Inicial</button>
           <button id="restart" class="call-action">Reiniciar</button>
         </div>
       </div>

@@ -45,9 +45,3 @@ const createBodyByError = (letter) => {
     openModalLoser();
   }
 };
-
-export const addEventsButons = (listButons, func) => {
-  listButons.forEach((btn, i) => {
-    btn.addEventListener("click", (e) => func(e, i, btn));
-  });
-};

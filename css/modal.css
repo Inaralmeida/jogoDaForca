@@ -12,7 +12,8 @@
 /* MODAL START */
 .modal-content-start,
 .modal-content-win,
-.modal-content-loser {
+.modal-content-loser,
+.modal-content-finish {
   width: 80%;
   height: 70%;
   background-color: #f2f2f2;
@@ -68,7 +69,8 @@
 
 /* MODAL WIN */
 .modal-content-win,
-.modal-content-loser {
+.modal-content-loser,
+.modal-content-finish {
   width: 50%;
   background-image: url("../img/cofets1.gif");
   background-repeat: no-repeat;
@@ -101,6 +103,29 @@
   padding: 5px 1px;
   border-radius: 5px;
   margin-bottom: 20px;
+}
+/* MODAL FINISH */
+.modal-content-finish {
+  background-color: #909090;
+  color: #f2f2f2;
+  background-image: none;
+  height: 80%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.finish-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 90px;
+}
+.modal-content-finish > article {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
 @-webkit-keyframes scale-in-center {
   0% {

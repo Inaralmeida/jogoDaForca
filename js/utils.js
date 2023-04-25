@@ -35,9 +35,15 @@ const setDisplayElement = (element, display) => {
   element.style.display = display;
 };
 
-const resetElement = (id) => {
+const resetElement = (id, attr) => {
   const element = document.querySelector(id);
-  element.innerHTML = ``;
+  element[attr] = ``;
+};
+
+const setTextByElement = (arr, text) => {
+  arr.forEach((el) => {
+    el.textContent = text;
+  });
 };
 
 export const resetForca = () => {
@@ -65,4 +71,5 @@ export default {
   setDisplayElement,
   resetElement,
   resetForca,
+  setTextByElement,
 };

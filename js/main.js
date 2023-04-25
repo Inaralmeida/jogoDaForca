@@ -1,58 +1,11 @@
-import {
-  addEventsButons,
-  createButtonsLetters,
-  handleClickLetter,
-} from "./buttons.js";
-import { letterData, wordData } from "./data.js";
-import { createdArrLettersCorrect, createdSpaceLetters } from "./letters.js";
-import { closeModal, openModalStart } from "./modal.js";
-import { setPoints } from "./points.js";
-import { createdTips, firstTip, handleClickTip, updatedTips } from "./tips.js";
-import { selectWord } from "./word.js";
+import { handleClickLetter } from "./buttons.js";
+import { letterData } from "./data.js";
+import { closeModal, openModalEndGame, openModalStart } from "./modal.js";
+import { newGame, startGame, resetScreen } from "./startGame.js";
 import $ from "./utils.js";
 import doc from "./elementos.js";
 
-const { btns, elTxt, inputs, containers } = doc;
-
-const startGame = (newGame = true) => {
-  if (newGame) {
-    setPoints(0);
-    $.setLocalStorage("totalWords", 0);
-    elTxt.pPlayerName.textContent = inputs.namePlayer.value;
-    $.setLocalStorage("PlayerName", inputs.namePlayer.value);
-  } else {
-    elTxt.pPlayerName.textContent = $.getLocalStorage("PlayerName");
-  }
-
-  containers.containerLetras.innerHTML = ``;
-  createButtonsLetters(containers.teclado, letterData);
-  $.setLocalStorage("PlayerName", inputs.namePlayer.value);
-  const wordSelected = selectWord(wordData);
-  $.resetLocalStorage(
-    "letters",
-    createdArrLettersCorrect(wordSelected.palavra.split(""))
-  );
-  $.setDisplayElement(containers.main, "flex");
-  $.resetLocalStorage("lettersWrong", []);
-  $.resetLocalStorage("tipsEnabled", []);
-  firstTip(wordSelected.categoria);
-  createdTips(wordSelected.dicas);
-  createdSpaceLetters(wordSelected.palavra);
-  addEventsButons(btns.btnTips, handleClickTip);
-  updatedTips();
-};
-
-const newGame = () => {
-  resetScreen();
-  startGame(false);
-};
-
-const resetScreen = () => {
-  $.resetElement("#teclado");
-  $.resetElement("#containerLetras");
-  $.resetElement("#containerDicas");
-  $.resetForca();
-};
+const { btns } = doc;
 
 btns.btnStart.addEventListener("click", () => {
   closeModal();
@@ -64,10 +17,15 @@ btns.btnNextWord.addEventListener("click", () => {
   newGame();
 });
 
-btns.btnRestart.addEventListener("click", () => {
+$.addEventsButons(btns.btnsRestart, () => {
   closeModal();
   resetScreen();
   openModalStart();
+});
+
+btns.btnEndGame.addEventListener("click", () => {
+  closeModal();
+  openModalEndGame();
 });
 
 document.addEventListener("keydown", (e) => {
