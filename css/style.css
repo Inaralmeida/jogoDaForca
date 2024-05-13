@@ -4,34 +4,32 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  min-height: 100vh;
+  background-image: var(--gradient)
 }
 
-header {
-  width: 100%;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  background-color: #ccc;
-}
+
 
 main {
   width: 100%;
-  height: calc(100vh - 70px);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   display: none;
+  background-image: var(--gradient)
+  
 }
 
 .informacoes {
   width: 100%;
   height: 70px;
-  background-color: #bbb;
+  background-color: var(--secondary);
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: space-around;
+  text-transform: uppercase;
 }
 
 .containerForca {
@@ -221,38 +219,49 @@ main {
 
 .teclado {
   width: 100%;
-  height: calc(50% - 70px);
-  padding: 20px 60px;
+  max-width: 1200px;
+  /* height: calc(50% - 70px); */
+  /* padding: 20px 60px; */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .btns-letras {
-  width: 75%;
+  width: 100%;
   height: 100%;
   display: flex;
-  border: 10px solid #808080;
+  /* border: 10px solid #808080; */
   align-items: center;
   justify-content: center;
   padding: 60px;
   gap: 30px;
   flex-wrap: wrap;
   border-radius: 10px;
-  background-color: #ccc;
 }
 .btn-letra {
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height:100px;
   border-radius: 8px;
   border: none;
   box-shadow: 2px 2px 5px #101010;
-  font-size: 24px;
+  font-size: 34px;
   font-weight: bold;
+  background-color: var(--tertiary);
+  color: var(--white);
+  box-shadow: var(--shadow);
+}
+
+@media screen and (max-width: 500px) {
+  .btn-letra {
+    width: 30px;
+    height: 50px;
+    font-size: 20px;
+  }
 }
 
 .btn-letra:hover,
 .btn-options > button:hover {
-  background-color: #d6d4d4;
+  background-color: var(--background);
   transform: scale(1.1);
   transition: all 0.2s;
 }
