@@ -1,11 +1,11 @@
 import { createButtonsLetters } from "./buttons.js";
 import { letterData, wordData } from "./data.js";
+import doc from "./elementos.js";
 import { createdArrLettersCorrect, createdSpaceLetters } from "./letters.js";
 import { setPoints } from "./points.js";
 import { createdTips, firstTip, handleClickTip, updatedTips } from "./tips.js";
-import { selectWord } from "./word.js";
 import $ from "./utils.js";
-import doc from "./elementos.js";
+import { selectWord } from "./word.js";
 
 const { btns, elTxt, inputs, containers } = doc;
 

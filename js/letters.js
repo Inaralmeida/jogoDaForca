@@ -1,7 +1,7 @@
+import doc from "./elementos.js";
 import { modalWin } from "./modal.js";
 import { addPoints, totalWordsCorrect } from "./points.js";
 import { updatedTips } from "./tips.js";
-import doc from "./elementos.js";
 import $ from "./utils.js";
 
 const { containers } = doc;
@@ -40,6 +40,7 @@ export const createdArrLettersCorrect = (word) => {
 };
 
 export const createdSpaceLetters = (word) => {
+  console.log('word', word)
   const arrWord = word.split("");
   arrWord.forEach((letter) => {
     const elTip = $.createElement("span", "", `containerLetra`);

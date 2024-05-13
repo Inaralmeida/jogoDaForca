@@ -8,6 +8,7 @@ import $ from "./utils.js";
 const { btns } = doc;
 
 btns.btnStart.addEventListener("click", () => {
+  console.log('comecou')
   closeModal();
   startGame();
 });
