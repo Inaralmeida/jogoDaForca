@@ -2,13 +2,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
-
 :root {
   width: 100%;
   height: 100vh;
   background-color: #f2f2f2;
   font-family: sans-serif;
+  --blue: #66C3FF;
+  --primary: #BF05F2; 
+  --secondary: #1B0273; 
+  --background: #0F0140; 
+  --black: #090126; 
+  --shadow:  2px 2px 16px 4px #850aa880; 
+  --outline: #A2AEF2; 
+  --white: #f2f2f2; 
+  --gradient:linear-gradient(25deg, #1A0272 35%,60%, #090126 84.87752928647497%)
+;
+
+
 }
 
 button {
@@ -30,15 +44,34 @@ button {
   text-align: center;
   font-size: 44px;
   border-radius: 10px;
-  background-color: brown;
-  color: #f2f2f2;
+  background-color: var(--primary);
+  color: var(--white);
   font-weight: 600;
-  border: 1px solid rgb(118, 31, 31);
-  box-shadow: 2px 2px 5px rgb(170, 54, 54);
-  opacity: 0.8;
+  border: none;
+  /* box-shadow: var(--shadow); */
   transition: all 0.2s;
 }
 
 .call-action:hover {
-  opacity: 1;
+  transform: scale(1.1);
+}
+
+.play-game-call-action{
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--white);
+  box-shadow: 2px 2px 8px 4px #850aa880;
+  transition: all 0.3s;
+}
+
+.play-game-call-action:hover{
+  transform: scale(1.2);
+}
+.play-game-call-action img{
+  width: 70px;
 }

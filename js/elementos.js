@@ -1,12 +1,14 @@
 //Modals
 const modalEl = document.querySelector("#modal");
 const modalStart = document.querySelector(".modal-content-start");
+const modalGetName = document.querySelector(".modal-content-get-name");
 const modalwin = document.querySelector(".modal-content-win");
 const modalLoser = document.querySelector(".modal-content-loser");
 const modalEndGame = document.querySelector(".modal-content-finish");
 
 //btns
 const btnStart = document.querySelector("#start-game");
+const btnPlay = document.querySelector("#play-game");
 const btnNextWord = document.querySelector("#next-word");
 const btnsRestart = document.querySelectorAll("#restart");
 const btnEndGame = document.querySelector("#end-game");
@@ -34,6 +36,7 @@ export default {
     modalwin,
     modalLoser,
     modalEndGame,
+    modalGetName
   },
   btns: {
     btnStart,
@@ -41,6 +44,7 @@ export default {
     btnsRestart,
     btnTips,
     btnEndGame,
+    btnPlay
   },
   elTxt: {
     pTotalPalavras,

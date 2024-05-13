@@ -1,9 +1,9 @@
 import { handleClickLetter } from "./buttons.js";
 import { letterData } from "./data.js";
-import { closeModal, openModalEndGame, openModalStart } from "./modal.js";
-import { newGame, startGame, resetScreen } from "./startGame.js";
-import $ from "./utils.js";
 import doc from "./elementos.js";
+import { closeModal, openModalEndGame, openModalGetName, openModalStart } from "./modal.js";
+import { newGame, resetScreen, startGame } from "./startGame.js";
+import $ from "./utils.js";
 
 const { btns } = doc;
 
@@ -17,6 +17,9 @@ btns.btnNextWord.addEventListener("click", () => {
   newGame();
 });
 
+btns.btnPlay.addEventListener("click", () => {
+  openModalGetName();
+})
 $.addEventsButons(btns.btnsRestart, () => {
   closeModal();
   resetScreen();

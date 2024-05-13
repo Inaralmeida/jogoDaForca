@@ -1,6 +1,6 @@
-import $ from "./utils.js";
 import doc from "./elementos.js";
-const { modalEl, modalStart, modalLoser, modalwin, modalEndGame } = doc.modal;
+import $ from "./utils.js";
+const { modalEl, modalStart, modalLoser, modalwin, modalEndGame, modalGetName} = doc.modal;
 const { pTotalPalavras, pPontos, pPlayerName } = doc.elTxt;
 
 export const closeModal = () => {
@@ -9,12 +9,21 @@ export const closeModal = () => {
   $.setDisplayElement(modalLoser, "none");
   $.setDisplayElement(modalwin, "none");
   $.setDisplayElement(modalEndGame, "none");
+  $.setDisplayElement(modalGetName, "none");
 };
 
 export const openModalStart = () => {
   $.setDisplayElement(modalEl, "flex");
   $.setDisplayElement(modalStart, "flex");
 };
+export const openModalGetName = () => {
+  $.setDisplayElement(modalStart, "none");
+  $.setDisplayElement(modalEl, "flex");
+  $.setDisplayElement(modalGetName, "flex");
+};
+
+
+
 
 export const modalWin = () => {
   setTimeout(() => {

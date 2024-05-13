@@ -13,40 +13,54 @@
 .modal-content-start,
 .modal-content-win,
 .modal-content-loser,
-.modal-content-finish {
-  width: 80%;
-  height: 70%;
-  background-color: #f2f2f2;
-  border-radius: 8px;
+.modal-content-finish,
+.modal-content-get-name
+{
+  width: 700px;
+  height: fit-content;
+  background-image: var(--gradient);
+  border-radius: 16px;
   padding: 20px 15px;
+  gap: 24px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-
+  color: var(--white);
+  box-shadow: var(--shadow);
   -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
   animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-.modal-content-start .header {
+.modal-content-start{
+  width: 350px;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+  gap: 54px;
+  border-radius: 48px;
+  text-transform: uppercase;
+}
+
+/* MODAL GET NAME */
+.modal-content-get-name .header {
   width: 100%;
-  height: 80px;
   text-align: center;
 }
 
-.modal-content-start .content {
+.modal-content-get-name .content {
   width: 100%;
   height: calc(100% - 80px);
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+  gap: 24px;
 }
 
-.modal-content-start form {
-  width: 50%;
-  background-color: #ccc;
+.modal-content-get-name form {
+  width: 80%;
   display: flex;
   align-items: center;
   border-radius: 8px;
@@ -56,7 +70,7 @@
   gap: 20px;
 }
 
-.modal-content-start form input {
+.modal-content-get-name form input {
   width: 100%;
   height: 70px;
   border-radius: 8px;
@@ -127,6 +141,7 @@
   flex-direction: column;
   gap: 20px;
 }
+
 @-webkit-keyframes scale-in-center {
   0% {
     -webkit-transform: scale(0);
